@@ -17,12 +17,13 @@ public class PlayerMovement : MonoBehaviour
     float runSpeed = 5;
 
     [SerializeField]
-    float jumpForce = 5;
+    float jumpForce = 50;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Physics2D.gravity = Physics2D.gravity * 5;
         playerRB = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
@@ -32,6 +33,21 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Run();
+        Jump();
+    }
+
+    private void Jump()
+    {
+        if (playerRB.velocity.y < -.1)
+        {
+            playerAnimator.SetBool("IsFalling", true);
+            playerAnimator.SetBool("IsJumping", false);
+        }
+        else
+        {
+            playerAnimator.SetBool("IsFalling", false);
+
+        }
     }
 
     void Run()
@@ -68,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump()
     {
+        playerAnimator.SetBool("IsJumping", true);
         playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
     }
 }
