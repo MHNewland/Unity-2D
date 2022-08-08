@@ -19,7 +19,11 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
+<<<<<<< HEAD
+  m_Title: Console
+=======
   m_Title: Hierarchy
+>>>>>>> parent of 60837742 (worked on adding climbing)
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,10 +124,17 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1299
+<<<<<<< HEAD
+  m_MinSize: {x: 911, y: 492}
+  m_MaxSize: {x: 22006, y: 14042}
+  vertical: 0
+  controlID: 167
+=======
   m_MinSize: {x: 811, y: 492}
   m_MaxSize: {x: 22006, y: 14042}
   vertical: 0
   controlID: 169
+>>>>>>> parent of 60837742 (worked on adding climbing)
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,10 +156,17 @@ MonoBehaviour:
     y: 0
     width: 1642
     height: 1299
+<<<<<<< HEAD
+  m_MinSize: {x: 403, y: 342}
+  m_MaxSize: {x: 8003, y: 8042}
+  vertical: 1
+  controlID: 209
+=======
   m_MinSize: {x: 303, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
   controlID: 454
+>>>>>>> parent of 60837742 (worked on adding climbing)
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -170,10 +188,17 @@ MonoBehaviour:
     y: 0
     width: 1642
     height: 873
+<<<<<<< HEAD
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 210
+=======
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
   controlID: 455
+>>>>>>> parent of 60837742 (worked on adding climbing)
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -278,7 +303,11 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
+  controlID: 104
+=======
   controlID: 125
+>>>>>>> parent of 60837742 (worked on adding climbing)
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,7 +384,11 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
+<<<<<<< HEAD
+  controlID: 168
+=======
   controlID: 170
+>>>>>>> parent of 60837742 (worked on adding climbing)
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -375,8 +408,8 @@ MonoBehaviour:
     y: 0
     width: 528
     height: 597
-  m_MinSize: {x: 275, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -755,9 +788,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+      m_SelectedIDs: 6a730000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 96bcffff
+=======
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 5cfbfffffa450000
+>>>>>>> parent of 60837742 (worked on adding climbing)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -819,22 +858,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
+    - Assets/Unused/Simple 2D Platformer BE2
+=======
     - Assets/Scripts
+>>>>>>> parent of 60837742 (worked on adding climbing)
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
+  - Assets/Unused/Simple 2D Platformer BE2
+=======
   - Assets/Scripts
+>>>>>>> parent of 60837742 (worked on adding climbing)
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\mattn\Desktop\Unity 2D\TileVania
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+    m_SelectedIDs: c48b0000
+    m_LastClickedID: 35780
+    m_ExpandedIDs: 00000000668b0000688b00006a8b00006c8b00006e8b0000708b0000728b0000748b0000768b0000788b00007a8b00007c8b00007e8b0000808b0000828b0000848b0000868b0000888b00008a8b00008c8b00008e8b0000908b0000928b0000948b0000968b0000988b00009a8b00009c8b00009e8b0000c08b000000ca9a3b
+=======
     m_SelectedIDs: 8a470000
     m_LastClickedID: 18314
     m_ExpandedIDs: 0000000036470000384700003a4700003c4700003e47000040470000424700004447000046470000484700004a4700004c4700004e47000050470000524700005447000056470000584700005a4700005c4700005e47000060470000624700006447000066470000684700006a4700006c4700006e4700009247000000ca9a3b
+>>>>>>> parent of 60837742 (worked on adding climbing)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -862,7 +915,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000036470000384700003a4700003c4700003e47000040470000424700004447000046470000484700004a4700004c4700004e47000050470000524700005447000056470000584700005a4700005c4700005e47000060470000624700006447000066470000684700006a4700006c4700006e470000
+    m_ExpandedIDs: 00000000668b0000688b00006a8b00006c8b00006e8b0000708b0000728b0000748b0000768b0000788b00007a8b00007c8b00007e8b0000808b0000828b0000848b0000868b0000888b00008a8b00008c8b00008e8b0000908b0000928b0000948b0000968b0000988b00009a8b00009c8b00009e8b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -889,8 +942,13 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
+<<<<<<< HEAD
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000c2890000ce5c0000a84f00009a640000464c000056590000865900008c590000685a00002853000022450000d2170000000000005e4e00008e5800007e5e0000ce5a0000745900007a600000f05b00004852000018570000d65a0000725d0000b4570000e05b00000e5300002a460000ca6500007a46000072460000
+=======
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c2890000ce5c0000a84f00009a640000464c000056590000865900008c590000685a00002853000022450000d2170000000000005e4e00008e5800007e5e0000ce5a0000745900007a600000f05b00004852000018570000d65a0000725d0000b4570000e05b00000e5300002a460000ca6500007a460000
+>>>>>>> parent of 60837742 (worked on adding climbing)
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

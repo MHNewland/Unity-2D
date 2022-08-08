@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Artifact Database too large
+TileVania/Library/ArtifactDB
+
