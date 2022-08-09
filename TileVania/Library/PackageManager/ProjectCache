@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637953857142043995
-    m_Hash: 2095189987
+      ticks: 637955208532273594
+    m_Hash: 1811194257
   m_LockFileStatus:
     m_FilePath: C:/Users/mattn/Desktop/Unity 2D/TileVania/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637953857516238840
-    m_Hash: 2413909794
+      ticks: 637955208532273594
+    m_Hash: 1220292396
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

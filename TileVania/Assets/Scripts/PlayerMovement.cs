@@ -11,22 +11,32 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRB;
     SpriteRenderer playerSprite;
     Animator playerAnimator;
+    CapsuleCollider2D playerCollider;
 
 
     [SerializeField]
     float runSpeed = 5;
 
     [SerializeField]
+    float climbSpeed = 5;
+    
+
+    [SerializeField]
     float jumpForce = 50;
+
+    [SerializeField]
+    float playerGravity = 5;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Physics2D.gravity = Physics2D.gravity * 5;
         playerRB = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
+
+        playerRB.gravityScale = playerGravity;
     }
 
     // Update is called once per frame
@@ -34,23 +44,56 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         Jump();
+        Climb();
+    }
+
+    private void Climb()
+    {
+
+        if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
+        {
+            playerAnimator.SetBool("IsJumping", false);
+            playerAnimator.SetBool("IsFalling", false);
+            playerRB.velocity = new Vector2(playerRB.velocity.x, moveInput.y * climbSpeed);
+            playerRB.gravityScale = 0;
+
+            if (moveInput.y != 0)
+            {
+                playerAnimator.SetBool("IsClimbing", true);
+
+
+            }
+            else
+            {
+                playerAnimator.SetBool("IsClimbing", false);
+            }
+        }
+        else
+        {
+
+            playerRB.gravityScale = playerGravity;
+            playerAnimator.SetBool("IsClimbing", false);
+        }
     }
 
     private void Jump()
     {
-        if (playerRB.velocity.y < -.1)
+        if (!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
-            playerAnimator.SetBool("IsFalling", true);
-            playerAnimator.SetBool("IsJumping", false);
-        }
-        else
-        {
-            playerAnimator.SetBool("IsFalling", false);
 
+            if (playerRB.velocity.y < -.1)
+            {
+                playerAnimator.SetBool("IsJumping", false);
+                playerAnimator.SetBool("IsFalling", true);
+            }
+            else
+            {
+                playerAnimator.SetBool("IsFalling", false);
+
+            }
         }
     }
-
-    void Run()
+        void Run()
     {
         Vector2 playerVel = new Vector2(moveInput.x*runSpeed, playerRB.velocity.y);
         playerRB.velocity = playerVel;
@@ -84,7 +127,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump()
     {
-        playerAnimator.SetBool("IsJumping", true);
-        playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+        if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+            playerAnimator.SetBool("IsJumping", true);
+            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+        }
     }
 }
