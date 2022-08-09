@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRB;
     SpriteRenderer playerSprite;
     Animator playerAnimator;
-    CapsuleCollider2D playerCollider;
+    BoxCollider2D playerCollider;
 
 
     [SerializeField]
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
-        playerCollider = GetComponent<CapsuleCollider2D>();
+        playerCollider = GetComponent<BoxCollider2D>();
 
         playerRB.gravityScale = playerGravity;
     }
