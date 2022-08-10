@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     Vector2 moveInput;
+    Vector2 playerVel;
     Rigidbody2D playerRB;
     SpriteRenderer playerSprite;
     Animator playerAnimator;
@@ -27,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float playerGravity = 5;
 
+    [SerializeField]
+    bool isAlive;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,14 +41,19 @@ public class PlayerMovement : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
 
         playerRB.gravityScale = playerGravity;
+        isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Run();
-        Jump();
-        Climb();
+        if (isAlive)
+        {
+            Run();
+            Jump();
+            Climb();
+        }
+
     }
 
     private void Climb()
@@ -80,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
-
             if (playerRB.velocity.y < -.1)
             {
                 playerAnimator.SetBool("IsJumping", false);
@@ -95,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
     }
         void Run()
     {
-        Vector2 playerVel = new Vector2(moveInput.x*runSpeed, playerRB.velocity.y);
+        playerVel = new Vector2(moveInput.x*runSpeed, playerRB.velocity.y);
         playerRB.velocity = playerVel;
     }
 
@@ -104,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput = value.Get<Vector2>();
 
         //player is moving
-        if (moveInput.x != 0)
+        if (moveInput.x != 0 && isAlive)
         {
             playerAnimator.SetBool("IsRunning", true);
 
@@ -127,9 +135,18 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump()
     {
-        if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
+        if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive){
             playerAnimator.SetBool("IsJumping", true);
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "Enemy")
+        {
+            Debug.Log("dead");
+            isAlive = false;
         }
     }
 }
