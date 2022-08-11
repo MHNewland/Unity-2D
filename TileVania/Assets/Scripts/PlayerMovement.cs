@@ -12,8 +12,16 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D playerRB;
     SpriteRenderer playerSprite;
     Animator playerAnimator;
-    BoxCollider2D playerCollider;
+    CapsuleCollider2D playerCollider;
+    BoxCollider2D feetCollider;
 
+    [SerializeField]
+    GameObject bullet;
+
+    [SerializeField]
+    GameObject gun;
+
+    Vector2 deathPos = Vector2.zero;
 
     [SerializeField]
     float runSpeed = 5;
@@ -38,7 +46,8 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
-        playerCollider = GetComponent<BoxCollider2D>();
+        feetCollider = GetComponent<BoxCollider2D>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
 
         playerRB.gravityScale = playerGravity;
         isAlive = true;
@@ -52,6 +61,14 @@ public class PlayerMovement : MonoBehaviour
             Run();
             Jump();
             Climb();
+        }
+        else
+        {
+            playerRB.gravityScale = 0;
+            playerRB.velocity = Vector2.up;
+            playerCollider.isTrigger = true;
+            feetCollider.isTrigger = true;
+            playerSprite.color = new Color(255, 255, 255,.5f);
         }
 
     }
@@ -87,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (!playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
+        if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
             if (playerRB.velocity.y < -.1)
             {
@@ -115,16 +132,8 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput.x != 0 && isAlive)
         {
             playerAnimator.SetBool("IsRunning", true);
-
-            //if moving left, flip sprite
-            if (moveInput.x < 0)
-            {
-                playerSprite.flipX = true;
-            }
-            else if (moveInput.x > 0)
-            {
-                playerSprite.flipX = false;
-            }
+            transform.localScale = new Vector3(Math.Sign(moveInput.x), 1, 1);
+            
         }
         else
         {
@@ -135,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump()
     {
-        if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive){
+        if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive){
             playerAnimator.SetBool("IsJumping", true);
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
         }
@@ -143,10 +152,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Enemy")
+        if (collision.collider.tag == "Enemy" || collision.collider.tag == "Hazards") 
         {
-            Debug.Log("dead");
             isAlive = false;
+            playerAnimator.SetTrigger("Dying");
         }
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive) return;
+
+        Instantiate(bullet, gun.transform.position, gun.transform.rotation);
     }
 }

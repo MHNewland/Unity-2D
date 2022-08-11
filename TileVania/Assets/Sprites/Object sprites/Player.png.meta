@@ -31,37 +31,49 @@ TextureImporter:
     second: Jump 2
   - first:
       213: -2311659948842064771
-    second: Idle_1
+    second: Player_Idle_1
   - first:
       213: 7364682651488144517
-    second: Idle_2
+    second: Player_Idle_2
   - first:
       213: -6287787046888575383
-    second: Run_1
+    second: Player_Run_1
   - first:
       213: -1182821291677670348
-    second: Run_2
+    second: Player_Run_2
   - first:
       213: -4709456396536258026
-    second: Run_3
+    second: Player_Run_3
   - first:
       213: -4529042392078601758
-    second: Run_4
+    second: Player_Run_4
   - first:
       213: -7446026091647042388
-    second: Jump_1
+    second: Player_Jump_1
   - first:
       213: 5938012242645255967
-    second: Jump_2
+    second: Player_Jump_2
   - first:
       213: -4245738604243887485
-    second: Jump_3
+    second: Player_Fall
   - first:
       213: 2473453845335418800
-    second: Climb_1
+    second: Player_Climb_1
   - first:
       213: -3287367053296241113
-    second: Climb_2
+    second: Player_Climb_2
+  - first:
+      213: -5319882733741912588
+    second: Player_Death_1
+  - first:
+      213: 7365574002475698461
+    second: Player_Death_2
+  - first:
+      213: 6472545519820947264
+    second: Player_Death_3
+  - first:
+      213: -2472340072831945791
+    second: Player_Death_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -175,15 +187,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_1
+      name: Player_Idle_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 59
-        width: 16
+        y: 69
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,15 +208,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Player_Idle_2
       rect:
         serializedVersion: 2
         x: 17
-        y: 59
-        width: 16
+        y: 69
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,15 +229,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_1
+      name: Player_Run_1
       rect:
         serializedVersion: 2
         x: 34
-        y: 59
-        width: 16
+        y: 69
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,15 +250,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_2
+      name: Player_Run_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 42
-        width: 16
+        y: 52
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,15 +271,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_3
+      name: Player_Run_3
       rect:
         serializedVersion: 2
         x: 17
-        y: 42
-        width: 16
+        y: 52
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,15 +292,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_4
+      name: Player_Run_4
       rect:
         serializedVersion: 2
         x: 34
-        y: 42
-        width: 16
+        y: 52
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,15 +313,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_1
+      name: Player_Jump_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 25
-        width: 16
+        y: 35
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,15 +334,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_2
+      name: Player_Jump_2
       rect:
         serializedVersion: 2
         x: 17
-        y: 25
-        width: 16
+        y: 35
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,15 +355,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_3
+      name: Player_Fall
       rect:
         serializedVersion: 2
         x: 34
-        y: 25
-        width: 16
+        y: 35
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,15 +376,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Climb_1
+      name: Player_Climb_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 16
+        y: 18
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -385,15 +397,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Climb_2
+      name: Player_Climb_2
       rect:
         serializedVersion: 2
         x: 17
-        y: 8
-        width: 16
+        y: 18
+        width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,6 +413,90 @@ TextureImporter:
       bones: []
       spriteID: 72674fd051de062d0800000000000000
       internalID: -3287367053296241113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 18
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd4490f6dafb26b0800000000000000
+      internalID: -5319882733741912588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d198a60e786c73660800000000000000
+      internalID: 7365574002475698461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death_3
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f39757bd913d950800000000000000
+      internalID: 6472545519820947264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Death_4
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c373e28dcb70bdd0800000000000000
+      internalID: -2472340072831945791
       vertices: []
       indices: 
       edges: []
