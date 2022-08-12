@@ -39,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     bool isAlive;
 
+    [SerializeField]
+    float ySpeedCap = 25f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
             Run();
             Jump();
             Climb();
+            if (playerRB.velocity.y > ySpeedCap) playerRB.velocity = new Vector2(playerRB.velocity.x, ySpeedCap);
         }
         else
         {
