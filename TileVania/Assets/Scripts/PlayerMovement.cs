@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Profiling;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -79,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Climb()
     {
-
+        Profiler.BeginSample("Climb");
         if (playerCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
             playerAnimator.SetBool("IsJumping", false);
@@ -104,10 +105,12 @@ public class PlayerMovement : MonoBehaviour
             playerRB.gravityScale = playerGravity;
             playerAnimator.SetBool("IsClimbing", false);
         }
+        Profiler.EndSample();
     }
 
     private void Jump()
     {
+        Profiler.BeginSample("Jump");
         if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ladder")))
         {
             if (playerRB.velocity.y < -.1)
@@ -121,15 +124,19 @@ public class PlayerMovement : MonoBehaviour
 
             }
         }
+        Profiler.EndSample();
     }
         void Run()
     {
+        Profiler.BeginSample("Run");
         playerVel = new Vector2(moveInput.x*runSpeed, playerRB.velocity.y);
         playerRB.velocity = playerVel;
+        Profiler.EndSample();
     }
 
     void OnMove(InputValue value)
     {
+        Profiler.BeginSample("OnMove");
         moveInput = value.Get<Vector2>();
 
         //player is moving
@@ -143,24 +150,28 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("IsRunning", false);
         }
-
+        Profiler.EndSample();
     }
 
     void OnJump()
     {
+        Profiler.BeginSample("OnJump");
         if (feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && isAlive){
             playerAnimator.SetBool("IsJumping", true);
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
         }
+        Profiler.EndSample();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Profiler.BeginSample("Player OnCollisionEnter");
         if (collision.collider.tag == "Enemy" || collision.collider.tag == "Hazards") 
         {
             isAlive = false;
             playerAnimator.SetTrigger("Dying");
         }
+        Profiler.EndSample();
     }
 
     void OnFire(InputValue value)
